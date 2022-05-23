@@ -1,13 +1,14 @@
 package paquete;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 @Service
 public class Servicio {
-    @Autowired
-    List<Persona> personaList;
+    List<Persona> personaList = new ArrayList<>();
 
     public void addPersona(Persona personaInput) {
         personaInput.setId(personaList.stream().count());
